@@ -6,7 +6,7 @@ int main() {
     try {
         Stack<int> stack(5);
 
-        // Ajouter des éléments dans la pile
+        // Ajouter des Ã©lÃ©ments dans la pile
         stack.push(3);
         stack.push(20);
         stack.push(5);
@@ -15,15 +15,15 @@ int main() {
         //stack.push(100);  stack overflow
 
         // Afficher la pile
-        std::cout << "État de la pile : " << std::endl << stack << std::endl;
+        std::cout << "Ã‰tat de la pile : " << std::endl << stack << std::endl;
 
-        // Dépiler les éléments
+        // DÃ©piler les Ã©lÃ©ments
         while (!stack.is_empty()) {
-            std::cout << "Élément dépilé : " << stack.pop() << std::endl;
+            std::cout << "Ã‰lÃ©ment dÃ©pilÃ© : " << stack.pop() << std::endl;
         }
 
         // Afficher la pile vide
-        std::cout << "Pile vidée. État : " << stack << std::endl;
+        std::cout << "Pile vidÃ©e. Ã‰tat : " << stack << std::endl;
 
     }
     catch (const std::exception& e) {

@@ -11,7 +11,7 @@ void CalcRPN(void) {
 		double num,a,b;
 		int n = 0;
 		while (true) {
-			std::cout << "0 pour sortir, 1 pour un numéro, 2 pour une opération :" << std::endl;
+			std::cout << "0 pour sortir, 1 pour un numÃ©ro, 2 pour une opÃ©ration :" << std::endl;
 			std::cin >> n;
 
 			if (n == 0) 
@@ -28,28 +28,28 @@ void CalcRPN(void) {
 				std::cin >> input;
 				if (input == "+") {
 					if (stack.get_top() < 2)
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					b = stack.pop();
 					stack.push(a + b);
 				}
 				else if (input == "-") {
 					if (stack.get_top() < 2)
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					b = stack.pop();
 					stack.push(a - b);
 				}
 				else if (input == "*") {
 					if (stack.get_top() < 2)
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					b = stack.pop();
 					stack.push(a * b);
 				}
 				else if (input == "/") {
 					if (stack.get_top() < 2)
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					b = stack.pop();
 					if (b==0)
@@ -58,25 +58,25 @@ void CalcRPN(void) {
 				}
 				else if (input == "sin") {
 					if (stack.is_empty())
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					stack.push(std::sin(a));
 				}
 				else if (input == "cos") {
 					if (stack.is_empty())
-						throw std::invalid_argument("Pas assez de numéros dans la pile.");
+						throw std::invalid_argument("Pas assez de numÃ©ros dans la pile.");
 					a = stack.pop();
 					stack.push(std::cos(a));
 				}
 				else
-					throw std::invalid_argument("Opération non reconnu.");
+					throw std::invalid_argument("OpÃ©ration non reconnu.");
 			}
 
 			else
 				throw std::invalid_argument("n non acceptable.");
 
 			std::cout << " " << std::endl;
-			std::cout << "État de la pile : " << std::endl << stack << std::endl;
+			std::cout << "Ã‰tat de la pile : " << std::endl << stack << std::endl;
 			std::cout << " " << std::endl;
 		}//while
 	}

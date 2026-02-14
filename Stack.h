@@ -22,7 +22,7 @@ namespace m1 {
             delete[] elements;
         }
 
-        size_t get_max_size() const { //tout ici (dans .h) pour éviter de devoir ajouter chaque fois template <typename T>
+        size_t get_max_size() const { //tout ici (dans .h) pour Ã©viter de devoir ajouter chaque fois template <typename T>
             return max_size;
         }
 
@@ -42,14 +42,14 @@ namespace m1 {
             if (top >= max_size) {
                 throw std::overflow_error("Stack overflow: maximum size reached.");
             }
-            elements[top++] = item; //il donne à elements[top] la valeur de item et après il incrémente top
+            elements[top++] = item; //il donne Ã  elements[top] la valeur de item et aprÃ¨s il incrÃ©mente top
         }
 
         T pop() {
             if (is_empty()) {
                 throw std::underflow_error("Stack underflow: no elements to pop.");
             }
-            return elements[--top]; //il decrémente top et il donne la valeur de elements[top-1]
+            return elements[--top]; //il decrÃ©mente top et il donne la valeur de elements[top-1]
         }
 
         T* get_elements() const {
@@ -57,12 +57,12 @@ namespace m1 {
         }
     };
 
-    // Opérateur externe
+    // OpÃ©rateur externe
     template <typename T>
     std::ostream& operator<<(std::ostream& os, const Stack<T>& stack) {
         os << " + - - - +" << std::endl;
         for (size_t i = 0; i < stack.get_top(); ++i) {  //get_top pour que get_pop marche
-            os <<" |   " <<stack.get_elements()[stack.get_top() - 1 - i]<<"   |"<<std::endl;  //ou contateur decrémentale
+            os <<" |   " <<stack.get_elements()[stack.get_top() - 1 - i]<<"   |"<<std::endl;  //ou contateur decrÃ©mentale
             os << " + - - - +" << std::endl;
         }
         return os;
